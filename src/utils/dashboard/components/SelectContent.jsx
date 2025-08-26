@@ -63,7 +63,7 @@ export default function SelectContent() {
             <DevicesRoundedIcon sx={{ fontSize: '1rem' }} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Sitemark-web" secondary="Web app" />
+        <ListItemText primary="Frontend" secondary="Web app" />
       </MenuItem>
       <MenuItem value={10}>
         <ListItemAvatar>
@@ -71,32 +71,11 @@ export default function SelectContent() {
             <SmartphoneRoundedIcon sx={{ fontSize: '1rem' }} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Sitemark-app" secondary="Mobile application" />
+        <ListItemText primary="Backend" secondary="Web app" />
       </MenuItem>
-      <MenuItem value={20}>
-        <ListItemAvatar>
-          <Avatar alt="Sitemark Store">
-            <DevicesRoundedIcon sx={{ fontSize: '1rem' }} />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Sitemark-Store" secondary="Web app" />
-      </MenuItem>
-      <ListSubheader>Development</ListSubheader>
-      <MenuItem value={30}>
-        <ListItemAvatar>
-          <Avatar alt="Sitemark Store">
-            <ConstructionRoundedIcon sx={{ fontSize: '1rem' }} />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Sitemark-Admin" secondary="Web app" />
-      </MenuItem>
+
       <Divider sx={{ mx: -1 }} />
-      <MenuItem value={40}>
-        <ListItemIcon>
-          <AddRoundedIcon />
-        </ListItemIcon>
-        <ListItemText primary="Add product" secondary="Web app" />
-      </MenuItem>
+
     </Select>
   );
 }
