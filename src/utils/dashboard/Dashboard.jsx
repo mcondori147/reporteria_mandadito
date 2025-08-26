@@ -15,7 +15,6 @@ import {
   datePickersCustomizations,
   treeViewCustomizations,
 } from './theme/customizations';
-import Filter from './components/Filter';
 
 const xThemeComponents = {
   ...chartsCustomizations,
@@ -52,7 +51,6 @@ export default function Dashboard(props) {
             }}
           >
             <Header />
-            <Filter />
             <MainGrid />
           </Stack>
         </Box>
