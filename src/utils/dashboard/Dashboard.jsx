@@ -22,16 +22,26 @@ const xThemeComponents = {
   ...datePickersCustomizations,
   ...treeViewCustomizations,
 };
+import DashboardFront from '../dashboard-frontEnd/DashboardFront';
+import { useState
 
+ } from 'react';
 export default function Dashboard(props) {
+  const [valueScreen, setValueScreen] = useState('FrontEnd'); // 'FrontEnd' | 'Backend'
+  const handleChangeScreen = (next) => {
+    // Validación simple por si quieres limitar valores
+    if (next === 'FrontEnd' || next === 'Backend') {
+      setValueScreen(next);
+    }
+  };
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
       <Box sx={{ display: 'flex' }}>
-        <SideMenu />
+        <SideMenu  onChangeScreen={handleChangeScreen}/>
         <AppNavbar />
         {/* Main content */}
-        <Box
+        {/* <Box
           component="main"
           sx={(theme) => ({
             flexGrow: 1,
@@ -53,7 +63,21 @@ export default function Dashboard(props) {
             <Header />
             <MainGrid />
           </Stack>
-        </Box>
+        </Box> */}
+
+        {/* <DashboardFront></DashboardFront> */}
+        {valueScreen === 'FrontEnd' && (
+        <section>
+          <h2>Reportería FrontEnd</h2>
+          <DashboardFront></DashboardFront>
+        </section>
+      )}
+
+        {valueScreen === 'Backend' && (
+          <section>
+            <h2>Reportería Backend</h2>
+          </section>
+        )}
       </Box>
     </AppTheme>
   );

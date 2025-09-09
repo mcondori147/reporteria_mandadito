@@ -14,11 +14,12 @@ export default function PageViewsBarChart() {
     (theme.vars || theme).palette.primary.main,
     (theme.vars || theme).palette.primary.light,
   ];
+
   return (
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Clientes remarketing
+          Clientes Remarketing
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
           <Stack
@@ -30,12 +31,12 @@ export default function PageViewsBarChart() {
             }}
           >
             <Typography variant="h4" component="p">
-              --
+              {/* 103 registros */}
             </Typography>
-            <Chip size="small" color="error" label="--%" />
+            {/* <Chip size="small" color="error" label="--%" /> */}
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Remarketing users in the last 30 days
+            Semana 1: (1-5 setiembre)
           </Typography>
         </Stack>
         <BarChart
@@ -45,16 +46,16 @@ export default function PageViewsBarChart() {
             {
               scaleType: 'band',
               categoryGapRatio: 0.5,
-              data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+              data: ['Lun', 'Mar', 'Mier', 'Jue', 'Vie'],
               height: 24,
             },
           ]}
           yAxis={[{ width: 50 }]}
           series={[
             {
-              id: 'page-views',
-              label: 'Page views',
-              data: [2234, 3872, 2998, 4125, 3357, 2789, 2998],
+              id: 'sem-01',
+              label: 'Sem 01',
+              data: [21, 0, 18, 12, 13],
               stack: 'A',
             }
           ]}

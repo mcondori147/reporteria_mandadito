@@ -43,7 +43,7 @@ AreaGradient.propTypes = {
 
 function StatCard({ title, value, interval, trend, data }) {
   const theme = useTheme();
-  const daysInWeek = getDaysInMonth(4, 2024);
+  const daysInWeek = getDaysInMonth(9, 2025);
 
   const trendColors = {
     up:
@@ -88,11 +88,11 @@ function StatCard({ title, value, interval, trend, data }) {
               <Typography variant="h4" component="p">
                 {value}
               </Typography>
-              <Chip size="small" color={color} label={trendValues[trend]} />
+              {/* <Chip size="small" color={color} label={trendValues[trend]} /> */}
             </Stack>
-            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+            {/* <Typography variant="caption" sx={{ color: 'text.secondary' }}>
               {interval}
-            </Typography>
+            </Typography> */}
           </Stack>
           <Box sx={{ width: '100%', height: 50 }}>
             <SparkLineChart
@@ -102,7 +102,7 @@ function StatCard({ title, value, interval, trend, data }) {
               showHighlight
               showTooltip
               xAxis={{
-                scaleType: 'band',
+                scaleType: 'point',
                 data: daysInWeek, // Use the correct property 'data' for xAxis
               }}
               sx={{

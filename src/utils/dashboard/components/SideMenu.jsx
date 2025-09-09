@@ -24,7 +24,7 @@ const Drawer = styled(MuiDrawer)({
   },
 });
 
-export default function SideMenu() {
+export default function SideMenu({onChangeScreen }) {
   return (
     <Drawer
       variant="permanent"
@@ -42,7 +42,7 @@ export default function SideMenu() {
           p: 1.5,
         }}
       >
-        <SelectContent />
+        <SelectContent  onChangeScreen={onChangeScreen}/>
       </Box>
       <Divider />
       <Box

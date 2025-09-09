@@ -1,0 +1,1 @@
+// export type ScreenValue = 'FrontEnd' | 'Backend';

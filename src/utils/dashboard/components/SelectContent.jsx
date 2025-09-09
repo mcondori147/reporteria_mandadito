@@ -13,6 +13,7 @@ import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import SmartphoneRoundedIcon from '@mui/icons-material/SmartphoneRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 
+
 const Avatar = styled(MuiAvatar)(({ theme }) => ({
   width: 28,
   height: 28,
@@ -26,12 +27,15 @@ const ListItemAvatar = styled(MuiListItemAvatar)({
   marginRight: 12,
 });
 
-export default function SelectContent() {
+export default function SelectContent({onChangeScreen}) {
   const [company, setCompany] = React.useState('');
 
   const handleChange = (event) => {
     setCompany(event.target.value);
   };
+
+    const go = (value) => onChangeScreen && onChangeScreen(value);
+
 
   return (
     <Select
@@ -57,15 +61,15 @@ export default function SelectContent() {
       }}
     >
       <ListSubheader sx={{ pt: 0 }}>Production</ListSubheader>
-      <MenuItem value="">
+      <MenuItem value="" onClick={() => go('FrontEnd')}>
         <ListItemAvatar>
           <Avatar alt="Sitemark web">
             <DevicesRoundedIcon sx={{ fontSize: '1rem' }} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Frontend" secondary="Web app" />
+        <ListItemText primary="Frontend" secondary="Web app"  />
       </MenuItem>
-      <MenuItem value={10}>
+      <MenuItem value={10} onClick={() => go('Backend')}>
         <ListItemAvatar>
           <Avatar alt="Sitemark App">
             <SmartphoneRoundedIcon sx={{ fontSize: '1rem' }} />
